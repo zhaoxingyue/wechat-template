@@ -1,0 +1,32 @@
+{
+  "name": "wechat-template",
+  "version": "1.0.1",
+  "description": "微信模板通知推送",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaoxingyue/wechat-template.git"
+  },
+  "keywords": [
+    "wechat",
+    "nodejs"
+  ],
+  "author": "https://github.com/zhaoxingyue/",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhaoxingyue/wechat-template/issues"
+  },
+  "homepage": "https://github.com/zhaoxingyue/wechat-template#readme",
+  "dependencies": {
+    "ava": "^0.16.0",
+    "bluebird": "^3.4.1",
+    "ioredis": "^2.2.0",
+    "moment": "^2.14.1",
+    "redis-scheduler": "^1.0.0",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.0"
+  }
+}
