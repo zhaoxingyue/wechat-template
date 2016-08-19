@@ -1,38 +1,44 @@
 import ava from 'ava'
 
 const send = require('./index')
+const moment = require('moment')
 
-let redis = {
-  host : 'localhost',
-  port : 6379,
-  password : ''
+let redis_conf = {
+  host: 'localhost', 
+  port: 6379, 
+  password: ''
 }
 
-let wechat = {
-  appid : 'wx04014b02a0a61c90',
-  appsecret : 'cc4c224b5018370cf6ffc95ad2be309c',
-  template_id : 'QEgD6JBsMPX0gOur1luNo0_w5egmsoZzQ1fMbaZKYwI',
+let wechat_param = {
+  appid : 'your_appid', 
+  appsecret : 'your_appsecret',
+  touser : 'your_touser',
+  template_id : 'yuor_template_id',
+  url : '',
   data : {
     first : {
-      value : '测试！',
-      color : '#173177'
+      value :'标题'
     },
     performance : {
-      value : '测试推送模板消息'
+      value : '表现'
     },
     time : {
-      value : '2016-08-05'
+      value : moment().format('YYYY年MM月DD日 HH时mm分')
     },
     remark : {
-      value : '测试remark'
+      value : '备注'
     }
-  },
-  touser : 'o12hcuM51yGHPgBPTgLlE7BAYCWA'
+  }
 }
 
 ava('test send wechat_template', t => {
-  send(redis, wechat)
-  .then(result => {
-    console.log(result)
+  return send(redis_conf, wechat_param)
+  .then(body => {
+    console.log(body)
+    t.is(body.errcode, 0)
+    t.is(body.errmsg, 'ok')
+  })
+  .catch(err => {
+    t.fail()
   })
 })

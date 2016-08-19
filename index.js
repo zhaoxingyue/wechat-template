@@ -7,9 +7,9 @@ const Scheduler = require('redis-scheduler')
 
 module.exports = function (redis_conf, wechat_param) {
   const scheduler = new Scheduler({
-    host: redis_conf.host, 
-    port: redis_conf.port, 
-    password: redis_conf.password
+    host: redis_conf.host || 'localhost', 
+    port: redis_conf.port || 6379, 
+    password: redis_conf.password || ''
   })
   const redis = new Redis(redis_conf.port, redis_conf.host, {password: redis_conf.password});
   Promise.promisifyAll(redis.get)

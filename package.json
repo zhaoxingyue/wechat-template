@@ -4,7 +4,7 @@
   "description": "微信模板通知推送",
   "main": "index.js",
   "scripts": {
-    "test": "ava test"
+    "test": "ava test.js"
   },
   "repository": {
     "type": "git",
