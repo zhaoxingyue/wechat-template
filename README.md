@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/zhaoxingyue/wechat-template.png?branch=master)](https://travis-ci.org/zhaoxingyue/wechat-template)
+[![NPM Version][npm-image]][npm-url]
 # wechat-template
 基于微信模板通知和redis缓存的简单封装消息推送模块
 
