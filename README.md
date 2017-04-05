@@ -1,5 +1,6 @@
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)]()
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/wechat-template)
+
 # wechat-template
 基于微信模板通知和redis缓存的简单封装消息推送模块
 
